@@ -1,0 +1,17 @@
+
+Step 1. In original file, some lines were not parsed correctly  
+If a data block start with a line of S, then the lines start with S in this data block were not parsed correctly
+
+Solution: Convert to Hex, then to ASCII bytes, then decode to EBCDIC, and encode to utf-8. This step creates file _convert1.
+example: S "N"  --->   S "+"
+
+
+Step 2. In original file, The lines start with X should be parse to EBCDIC. 
+
+solution: Convert to Hex, decode to EBCDIC, encode to utf-8. Some special character cannot display in Splunk. This step creates file _convert2.
+example: X D4C2C3E5F0F0F0F1 --->  S "MBCV0001"
+
+
+step 3. concantenate all lines starting with S in one data block. This step creates file _convert3.
+
+

@@ -1,5 +1,6 @@
 # math-as-code (Python version)
 
+> **Note**: Original source - https://github.com/Jam3/math-as-code/issues
 
 This is a reference to ease developers into mathematical notation by showing comparisons with Python code.
 
